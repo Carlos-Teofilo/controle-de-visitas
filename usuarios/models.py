@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
-    PermissionMixin,
+    PermissionsMixin,
 )  # Modelo personalizado de usuário
 
 
@@ -40,7 +40,7 @@ class UsuarioManager(BaseUserManager):
         return usuario
 
 
-class Usuario(AbstractBaseUser, PermissionMixin):
+class Usuario(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         verbose_name='E-mail do usuário',
         max_length=194,
