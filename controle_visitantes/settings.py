@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'usuarios.apps.UsuariosConfig',
     'porteiros.apps.PorteirosConfig',
     'visitantes.apps.VisitantesConfig',
+    'dashboard.apps.DashboardConfig',
 ]
 
 INSTALLED_APPS += [
