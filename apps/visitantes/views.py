@@ -4,6 +4,7 @@ from django.shortcuts import (
     redirect,
     get_object_or_404
 )
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseNotAllowed
 from django.utils import timezone
 
@@ -14,6 +15,7 @@ from visitantes.forms import (
 )
 
 
+@login_required
 def registrar_visitante(request):
 
     form = VisitanteForm()
@@ -42,6 +44,7 @@ def registrar_visitante(request):
     return render(request, 'registrar_visitante.html', context)
 
 
+@login_required
 def informacoes_visitantes(request, id):
 
     visitante = get_object_or_404(
@@ -81,6 +84,7 @@ def informacoes_visitantes(request, id):
     return render(request, 'informacoes_visitante.html', context)
 
 
+@login_required
 def finalizar_visita(request, id):
     
     if request.method == 'POST':
