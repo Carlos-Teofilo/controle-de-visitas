@@ -103,5 +103,6 @@ def finalizar_visita(request, id):
 
     else:
         return HttpResponseNotAllowed(
-            ['POST']
+            ['POST'],
+            'Método não permitido'
         )
