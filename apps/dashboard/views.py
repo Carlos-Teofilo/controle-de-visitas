@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
 from visitantes.models import Visitante
 
 
+@login_required
 def index(request):
 
     todos_visitantes = Visitante.objects.order_by('-horario_chegada')
