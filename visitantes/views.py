@@ -4,6 +4,7 @@ from django.shortcuts import (
     redirect,
     get_object_or_404
 )
+from django.http import HttpResponseNotAllowed
 from django.utils import timezone
 
 from .models import Visitante
@@ -99,3 +100,8 @@ def finalizar_visita(request, id):
         )
 
         return redirect('index')
+
+    else:
+        return HttpResponseNotAllowed(
+            ['POST']
+        )
